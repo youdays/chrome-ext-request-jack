@@ -62,5 +62,13 @@ describe('parseChecker', (): void => {
 
       expect(checkResult).toEqual(expected);
     });
+    it('対象じゃないURLなので判定されるべきではない', () => {
+      expect(
+        check('http://hoge.com/user/123', 'unknown.com', '/user/:userId')
+      ).toEqual(unmatchedResult);
+      expect(
+        check('http://hoge.com/user/123', 'hoge.com', '/hoge/:userId')
+      ).toEqual(unmatchedResult);
+    });
   });
 });
