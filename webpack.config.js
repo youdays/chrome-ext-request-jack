@@ -1,28 +1,30 @@
-const path = require("path");
-const copyPlugin = require("copy-webpack-plugin");
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path');
+const copyPlugin = require('copy-webpack-plugin');
+
 module.exports = {
-  target: "web",
+  target: 'web',
   entry: {
-    content: "./src/content.ts",
-    popup: "./src/popup.ts"
+    background: './src/background.ts',
+    popup: './src/popup.ts'
   },
   output: {
-    path: path.join(__dirname, "dist"),
-    filename: "[name].js"
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].js'
   },
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: ['.ts', '.js']
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist")
+    contentBase: path.join(__dirname, 'dist')
   },
   module: {
     rules: [
       {
         test: /\.ts$/,
-        loader: "ts-loader"
+        loader: 'ts-loader'
       }
     ]
   },
-  plugins: [new copyPlugin([{ from: "public", to: "./" }])]
+  plugins: [new copyPlugin([{ from: 'public', to: './' }])]
 };

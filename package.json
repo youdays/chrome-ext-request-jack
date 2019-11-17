@@ -4,24 +4,33 @@
   "main": "dist/bundle.js",
   "license": "MIT",
   "scripts": {
-    "watch" : "webpack --mode=development --watch",
+    "devserve": "webpack-dev-server",
+    "watch": "webpack --mode=production --watch",
     "build": "webpack --mode=production",
     "lint": "eslint src/** --ext .ts,.js",
-    "lint-fix": "yarn lint --fix"
+    "lint-fix": "yarn lint --fix",
+    "test": "jest"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.91",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.8",
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@typescript-eslint/parser": "^2.6.1",
     "copy-webpack-plugin": "^5.0.5",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.9.0",
     "prettier": "^1.19.1",
+    "ts-jest": "^24.1.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "path-parser": "^4.2.0"
   }
 }
