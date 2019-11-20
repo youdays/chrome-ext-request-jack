@@ -1,5 +1,5 @@
 import { createJsonDataSchemeUrl } from './lib/util';
-import { getRules, initData } from './lib/localStrage';
+import { getRules, initData } from './lib/localStorage';
 import WebRequestBodyDetails = chrome.webRequest.WebRequestBodyDetails;
 import BlockingResponse = chrome.webRequest.BlockingResponse;
 
